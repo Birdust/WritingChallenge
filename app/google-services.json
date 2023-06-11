@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "592559209831",
+    "project_id": "writingchall",
+    "storage_bucket": "writingchall.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592559209831:android:3c2c47fa5831987f8d43c2",
+        "android_client_info": {
+          "package_name": "com.example.writingchallenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHfCYnuU-x0_Df0yLdeDUNFIw4YI3sLhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
