@@ -11,7 +11,7 @@ import com.example.writingchallenge.entities.Note;
 import java.util.List;
 
 @Dao
-public interface NoteDao {
+public interface NoteDao { // 여기부터 SQL 다시
 
     @Query("SELECT * FROM notes ORDER BY id DESC")
     List<Note> getAllNotes();
