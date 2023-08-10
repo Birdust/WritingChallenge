@@ -1,26 +1,65 @@
 {
   "project_info": {
-    "project_number": "592559209831",
-    "project_id": "writingchall",
-    "storage_bucket": "writingchall.appspot.com"
+    "project_number": "343401379565",
+    "project_id": "writing-5dab0",
+    "storage_bucket": "writing-5dab0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:592559209831:android:3c2c47fa5831987f8d43c2",
+        "mobilesdk_app_id": "1:343401379565:android:4298242a8a67a20234bee4",
         "android_client_info": {
-          "package_name": "com.example.writingchallenge"
+          "package_name": "com.android.application"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "343401379565-qt19h552o8mnema493ogkipi2q0run4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBHfCYnuU-x0_Df0yLdeDUNFIw4YI3sLhU"
+          "current_key": "AIzaSyBamcJUwVo_zG1H7F0rQKBFgI2tb1nLKNM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343401379565-qt19h552o8mnema493ogkipi2q0run4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343401379565:android:336b8c6fd04a1ec834bee4",
+        "android_client_info": {
+          "package_name": "com.example.writingchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343401379565-qt19h552o8mnema493ogkipi2q0run4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBamcJUwVo_zG1H7F0rQKBFgI2tb1nLKNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343401379565-qt19h552o8mnema493ogkipi2q0run4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
