@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity   {
 
     }
 
-
+ // 노트 수정 코드 추가하기
     private void getNotes (){
 
         @SuppressLint("StaticFieldLeak")
