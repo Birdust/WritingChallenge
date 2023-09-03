@@ -2,15 +2,35 @@ package com.example.writingchallenge.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Entity;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.PrimaryKey;
+import androidx.room.Query;
+import androidx.room.Transaction;
+
+import com.google.firebase.database.DatabaseReference;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(tableName = "notes")
 public class Note implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
+
+    //private String content;
+    private String firebaseKey; // Firebase unique key
+
+    public String getFirebaseKey() {
+        return firebaseKey;
+    }
+
+    public void setFirebaseKey(String firebaseKey) {
+        this.firebaseKey = firebaseKey;
+    }
 
     @ColumnInfo(name = "title")
     private String title;
@@ -101,5 +121,21 @@ public class Note implements Serializable {
     @Override
     public String toString() {
         return title + " : " + dateTime;
+    }
+
+    @Dao
+    public interface NoteDao {
+        @Query("SELECT * FROM notes ORDER BY id DESC")
+        List<Note> getAllNotes();
+
+        @Insert(onConflict = OnConflictStrategy.REPLACE)
+        void insertNote(Note note);
+
+        @Delete
+        void DeleteNote(Note note);
+
+        // Custom method to insert a note and sync with Firebase
+        @Transaction
+        void insertNoteAndSyncWithFirebase(Note note, DatabaseReference firebaseDatabaseRef);
     }
 }

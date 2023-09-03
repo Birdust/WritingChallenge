@@ -33,8 +33,12 @@
             android:name=".activities.onBoarding"
             android:exported="false" />
         <activity
+            android:name=".activities.ViewMemoActivity"
+            android:exported="true"/>
+        <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

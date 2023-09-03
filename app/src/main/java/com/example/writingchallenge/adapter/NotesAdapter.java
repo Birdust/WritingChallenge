@@ -3,6 +3,7 @@ package com.example.writingchallenge.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,10 +20,20 @@ public class NotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private static final int VIEW_TYPE_EMPTY = 2;
 
     private List<Note> notes;
+    private AdapterView.OnItemClickListener clickListener;
 
-    public NotesAdapter(List<Note> notes) {
+
+
+    public NotesAdapter(List<Note> notes, AdapterView.OnItemClickListener clickListener) {
         this.notes = notes;
+        this.clickListener = clickListener;
     }
+
+    // Define an interface for item click events
+    public interface OnItemClickListener {
+        void onItemClick(Note note);
+    }
+
 
     @NonNull
     @Override
@@ -42,7 +53,20 @@ public class NotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof NoteViewHolder) {
             NoteViewHolder noteViewHolder = (NoteViewHolder) holder;
-            noteViewHolder.setNoteData(notes.get(position));
+            Note note = notes.get(holder.getAdapterPosition()); // Use getAdapterPosition()
+            noteViewHolder.setNoteData(note);
+            //noteViewHolder.setNoteData(notes.get(position));
+
+
+
+
+            noteViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Pass the clicked note to the click listener
+                    clickListener.onItemClick(null, view, holder.getAdapterPosition(), holder.getItemId());
+                }
+            });
         }
     }
 
